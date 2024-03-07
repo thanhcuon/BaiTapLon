@@ -1,0 +1,64 @@
+﻿<div class="container-chitiet-vanban">
+	<div class="grid2">
+		<div class="gird-column2">
+			<div class="navbar-gioithieu">
+				<h2 class="navbar-gioithieu-h2">GIỚI THIỆU</h2>
+				<ul class="navbar-gioithieu-ul">
+					@model BaiTapLon.Models.HomeViewModel
+					@foreach (var category in Model.ChildCategories)
+					{
+						<li class="narbar-gioithieu-li">
+							@if (!string.IsNullOrEmpty(category.url))
+							{
+								<a href="@category.url/@category.id" class="narbar-gioithieu-a">@category.name</a>
+							}
+							else
+							{
+								<a href="#" class="narbar-gioithieu-a">@category.name</a>
+							}
+						</li>
+					}
+				</ul>
+			</div>
+		</div>
+		<div class="gird-column8">
+			<div class="navbar-top">
+				<ul class="navbar-top-ul">
+					<li class="navbar-top-li"><a href="home.html"><i class="fa fa-lg fa-home"></i></a><i class="fa-solid fa-angle-right" style="margin-left: 5px;"></i></li>
+					<li class="navbar-top-li"><a href="tongquan.html">Giới thiệu</a><i class="fa-solid fa-angle-right" style="margin-left: 5px;"></i></li>
+					<li class="navbar-top-li"><a href="tamnhin-sumang.html">Tầm nhìn, sứ mạng và chính sách ĐBCL</a></li>
+					<li class="navbar-top-li"></li>
+				</ul>
+			</div>
+			<div class="noidung-chitiet-vb">
+				@if (Model.major_BanMoTaInCategory.Any())
+				{
+					<h1 h5 class="h5-ct-sdh">Bản mô tả @Model.major_BanMoTaInCategory.First().Courses_BanMoTa.name</h1>
+				}
+				else
+				{
+					<h5 class="h5-ct-sdh">Không có dữ liệu để hiển thị</h5>
+				}
+
+				@foreach (var BanMoTa in Model.major_BanMoTaInCategory)
+				{
+
+					<div class="div-ifame">
+						@if (!string.IsNullOrEmpty(BanMoTa.filepath))
+						{
+							<strong style="font-size:20px; color:#e74c3c"></strong>
+							<iframe id="pdfViewer" frameborder="0" scrolling="auto" width="865px" height="1000px" src="~/Content/pdfjs/web/viewer.html?file=@Url.Content(BanMoTa.filepath)"></iframe>
+						}
+						else
+						{
+							<p></p>
+						}
+					</div>
+				}
+
+
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,43 @@
+﻿
+@model BaiTapLon.Context.User
+@{
+	ViewBag.Title = "Dang_Nhap";
+	Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<div class="container-dangnhap">
+	<div class="grid2">
+		<<div class="dangnhap">
+			<div class="dangnhap-top">
+				<h1>Đăng nhập</h1>
+			</div>
+			<div class="form">
+				@using (Html.BeginForm("Dang_Nhap", "Auth", FormMethod.Post))
+				{
+					@Html.AntiForgeryToken()
+
+					<div class="form-grop">
+						@Html.TextBoxFor(m => m.email, new { placeholder = "Email", @class = "form-control" })
+					</div>
+					<div class="form-grop">
+						@Html.PasswordFor(m => m.password, new { placeholder = "Mật khẩu", @class = "form-control" })
+					</div>
+					<div class="button-dangnhap">
+						<button type="submit" class="btn btn-primary">Đăng nhập</button>
+					</div>
+					<div class="button-checkbox">
+						<div class="button">
+							<input type="checkbox" id="rememberMe" name="rememberMe">
+							<label for="rememberMe">Ghi nhớ</label>
+						</div>
+						<div class="button1">
+							<a href=""><i class="fa fa-lock"></i>&nbsp;&nbsp;&nbsp;Quên mật khẩu?</a>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+
+	</div>
+</div>
+

@@ -1,0 +1,81 @@
+:root {
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --cam-color:#f98334;
+    --do-color:red;
+    --xanh-color:rgb(0, 0, 255);
+    --xanh-navbar-color:#005180;
+}
+
+* {
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+}
+
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid2  {
+    display: flex;
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.column3 {
+    height: 150px;
+}
+
+.gird-column3{
+    width: 380px;
+    max-width: 100%;
+    margin: 0 ;
+    margin-right: 15px;
+    display: inline-block;
+    height: 500px;
+    max-height: 500px;
+    
+}
+
+.gird-column8 {
+    width: 75%;
+    margin: 0 ;
+    display: inline-block;
+}
+
+.gird-column2 {
+    flex: 1;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.gird-column32{
+    width: 380px;
+    max-width: 100%;
+    margin-right: 15px;
+    display: inline-block;
+    height: 500px;
+    max-height: 500px;
+    
+}
+
+.gird-column31 {
+    width: 380px;
+    max-width: 100%;
+    margin-right: 15px;
+    display: inline-block;
+    height: 200px;
+    max-height: 200px;
+}
+
+.grid__full-width {
+    width: 100%;
+}

@@ -1,0 +1,129 @@
+﻿<div class="container-tt">
+	<div class="grid2">
+		<div class="gird-column2">
+			@model BaiTapLon.Models.HomeViewModel
+
+			<!-- Hiển thị các category -->
+			<div class="navbar-gioithieu">
+				<h2 class="navbar-gioithieu-h2">KHOA HỌC CN & HTQT</h2>
+				<ul class="navbar-gioithieu-ul">
+					@foreach (var category in Model.ChildCategories)
+					{
+						<li class="narbar-gioithieu-li">
+							@if (!string.IsNullOrEmpty(category.url))
+							{
+								<a href="@category.url/@category.id" class="narbar-gioithieu-a">@category.name</a>
+							}
+							else
+							{
+								<a href="#" class="narbar-gioithieu-a">@category.name</a>
+							}
+						</li>
+					}
+				</ul>
+			</div>
+		</div>
+
+		<div class="gird-column8">
+			<div class="navbar-top">
+				<ul class="navbar-top-ul">
+					<li class="navbar-top-li"><a href="home.html"><i class="fa fa-lg fa-home"></i></a><i class="fa-solid fa-angle-right" style="margin-left: 5px;"></i></li>
+					<li class="navbar-top-li"><a href="tongquan.html">Giới thiệu</a><i class="fa-solid fa-angle-right" style="margin-left: 5px;"></i></li>
+					<li class="navbar-top-li"><a href="tamnhin-sumang.html">Tầm nhìn, sứ mạng và chính sách ĐBCL</a></li>
+					<li class="navbar-top-li"></li>
+				</ul>
+			</div>
+			<div class="trietly">
+				<div class="tintuc-ul">
+					@foreach (var tinTuc in Model.sciencesInCategory)
+					{
+						<div class="tintuc-li">
+
+							<div class="hinhanh-tintuc">
+								@if (!string.IsNullOrEmpty(tinTuc.image_path))
+								{
+									<a href=""><img src="@Url.Content(tinTuc.image_path)" alt="" style="height:180px; width: 270px"></a>
+								}
+							</div>
+
+							<div class="chutintuc">
+								<a href="@Url.Action("ViewKhoaHoc", "Home", new { id = tinTuc.id })" id="chutintuc-a">
+									@tinTuc.name
+								</a>
+								<br />
+								<ul class="time">
+									<li><i class="fa-regular fa-clock"></i>&nbsp; @tinTuc.created_at</li>
+									<li><i class="fa-regular fa-eye"></i>&nbsp; Đã xem : @tinTuc.views</li>
+								</ul>
+								@using System.Text.RegularExpressions;
+
+								@functions {
+									public string RemoveHtmlTags(string input)
+									{
+										if (input == null)
+										{
+											return string.Empty; // Trả về chuỗi rỗng nếu input là null
+										}
+										return Regex.Replace(input, "<.*?>", string.Empty);
+									}
+								}
+
+								@{
+									string trimmedContent = tinTuc.content;
+
+									string textOnlyContent = RemoveHtmlTags(trimmedContent);
+
+									if (textOnlyContent.Length > 280)
+									{
+										int lastSpace = textOnlyContent.LastIndexOf(' ', 280);
+										textOnlyContent = (lastSpace > 0) ? textOnlyContent.Substring(0, lastSpace) + "..." : textOnlyContent.Substring(0, 280) + "...";
+									}
+								}
+
+								<!-- Đoạn HTML hiển thị văn bản đã loại bỏ thẻ img -->
+								@if (!string.IsNullOrEmpty(textOnlyContent))
+								{
+									<div>
+										<p>
+											@Html.Raw(textOnlyContent)
+										</p>
+									</div>
+								}
+
+
+
+
+
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+			<div class="cactin-khac">
+				<h3>Các tin khác</h3>
+				@foreach (var post in Model.RamdomSciences)
+				{
+					<li class="cactin-khac-li">
+						<a href="#">
+							<i class="fa fa-caret-right"></i> &nbsp;&nbsp; @post.name
+						</a>
+					</li>
+				}
+
+				<div class="div-phantrang">
+					<ul class="phantrang-ul">
+						<li class="phantrang-li"><a href=""><i class="fa fa-caret-left"></i></a></li>
+						<li class="phantrang-li"><a href="">1</a></li>
+						<li class="phantrang-li"><a href="">2</a></li>
+						<li class="phantrang-li"><a href="">3</a></li>
+						<li class="phantrang-li"><a href="">...</a></li>
+						<li class="phantrang-li"><a href="">4</a></li>
+						<li class="phantrang-li"><a href=""><i class="fa fa-caret-right"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

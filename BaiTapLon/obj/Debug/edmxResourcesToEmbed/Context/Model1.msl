@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CTTDTModelStoreContainer" CdmEntityContainer="CTTDTEntities">
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="CTTDTModel.Slider">
+        <MappingFragment StoreEntitySet="Sliders">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="CTTDTModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="CTTDTModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="CTTDTModel.Post">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="tac_gia" ColumnName="tac_gia" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="CTTDTModel.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="tac_gia" ColumnName="tac_gia" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="CTTDTModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="Evaluate" ColumnName="Evaluate" />
+          <ScalarProperty Name="ban_quyen" ColumnName="ban_quyen" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="tac_gia" ColumnName="tac_gia" />
+          <ScalarProperty Name="versions" ColumnName="versions" />
+          <ScalarProperty Name="downloads" ColumnName="downloads" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="nguoi_gui" ColumnName="nguoi_gui" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="strong" ColumnName="strong" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Abouts">
+      <EntityTypeMapping TypeName="CTTDTModel.About">
+        <MappingFragment StoreEntitySet="Abouts">
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="tac_gia" ColumnName="tac_gia" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sciences">
+      <EntityTypeMapping TypeName="CTTDTModel.Science">
+        <MappingFragment StoreEntitySet="Science">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="tac_gia" ColumnName="tac_gia" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Universities">
+      <EntityTypeMapping TypeName="CTTDTModel.University">
+        <MappingFragment StoreEntitySet="Universities">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Majors">
+      <EntityTypeMapping TypeName="CTTDTModel.Major">
+        <MappingFragment StoreEntitySet="Majors">
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="courses_id" ColumnName="courses_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="CTTDTModel.Cours">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="universities_id" ColumnName="universities_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses_BanMoTa">
+      <EntityTypeMapping TypeName="CTTDTModel.Courses_BanMoTa">
+        <MappingFragment StoreEntitySet="Courses_BanMoTa">
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="universities_id" ColumnName="universities_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses_ChuongTrinhDaoTao">
+      <EntityTypeMapping TypeName="CTTDTModel.Courses_ChuongTrinhDaoTao">
+        <MappingFragment StoreEntitySet="Courses_ChuongTrinhDaoTao">
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="universities_id" ColumnName="universities_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Majors_BanMoTa">
+      <EntityTypeMapping TypeName="CTTDTModel.Majors_BanMoTa">
+        <MappingFragment StoreEntitySet="Majors_BanMoTa">
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="courses_id" ColumnName="courses_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Majors_ChuongTrinhDaoTao">
+      <EntityTypeMapping TypeName="CTTDTModel.Majors_ChuongTrinhDaoTao">
+        <MappingFragment StoreEntitySet="Majors_ChuongTrinhDaoTao">
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="courses_id" ColumnName="courses_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Universities_BanMoTa">
+      <EntityTypeMapping TypeName="CTTDTModel.Universities_BanMoTa">
+        <MappingFragment StoreEntitySet="Universities_BanMoTa">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Universities_ChuongTrinhDaoTao">
+      <EntityTypeMapping TypeName="CTTDTModel.Universities_ChuongTrinhDaoTao">
+        <MappingFragment StoreEntitySet="Universities_ChuongTrinhDaoTao">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CTTDTModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="remember_token" ColumnName="remember_token" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Robocons">
+      <EntityTypeMapping TypeName="CTTDTModel.Robocon">
+        <MappingFragment StoreEntitySet="Robocon">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="tac_gia" ColumnName="tac_gia" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_tuyensinh">
+      <EntityTypeMapping TypeName="CTTDTModel.tbl_tuyensinh">
+        <MappingFragment StoreEntitySet="tbl_tuyensinh">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="tac_gia" ColumnName="tac_gia" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

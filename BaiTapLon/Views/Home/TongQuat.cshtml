@@ -1,0 +1,57 @@
+﻿
+<div class="item-body">
+	<div class="grid2">
+		<div class="gird-column2">
+			<div class="navbar-gioithieu">
+				<h2 class="navbar-gioithieu-h2">GIỚI THIỆU</h2>
+				<ul class="navbar-gioithieu-ul">
+					<li class="narbar-gioithieu-li"><a href="tongquan.html" class="narbar-gioithieu-a">Tổng quan</a></li>
+					<li class="narbar-gioithieu-li"><a href="tamnhin-sumang.html" class="narbar-gioithieu-a">Tầm nhìn, sứ mạng và chính sách ĐBCL</a></li>
+					<li class="narbar-gioithieu-li"><a href="cocautochuc.html" class="narbar-gioithieu-a">Cơ cấu tổ chức</a></li>
+					<li class="narbar-gioithieu-li"><a href="cosovatchat.html" class="narbar-gioithieu-a">Cơ sở vật chất</a></li>
+					<li class="narbar-gioithieu-li"><a href="doingugiangvien.html" class="narbar-gioithieu-a">Đội ngũ giảng viên và cán bộ viên chức</a></li>
+					<li class="narbar-gioithieu-li"><a href="bacongkhai.html" class="narbar-gioithieu-a">Ba công khai</a></li>
+					<li class="narbar-gioithieu-li"><a href="thamquantruong.html" class="narbar-gioithieu-a">Tham quan trường</a></li>
+				</ul>
+				<ul class="navbar-gioithieu-ul1">
+					<li class="narbar-gioithieu-li"><a href="hoidongtruong.html" class="narbar-gioithieu-a">Hội đồng trường</a></li>
+					<li class="narbar-gioithieu-li"><a href="danguy.html" class="narbar-gioithieu-a">Đảng uỷ</a></li>
+					<li class="narbar-gioithieu-li"><a href="bangiamhieu.html" class="narbar-gioithieu-a">Ban giám hiệu</a></li>
+					<li class="narbar-gioithieu-li"><a href="cackhoadaotao.html" class="narbar-gioithieu-a">Các khoa đào tạo</a></li>
+					<li class="narbar-gioithieu-li"><a href="cacphongchucnang.html" class="narbar-gioithieu-a">Các phòng chức năng</a></li>
+					<li class="narbar-gioithieu-li"><a href="cactrungtam.html" class="narbar-gioithieu-a">Các trung tâm</a></li>
+					<li class="narbar-gioithieu-li"><a href="cactochucdoanthe.html" class="narbar-gioithieu-a">Các tổ chức đoàn thể</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="gird-column8">
+			<div class="navbar-top">
+				<ul class="navbar-top-ul">
+					<li class="navbar-top-li"><a href="home.html"><i class="fa fa-lg fa-home"></i></a><i class="fa-solid fa-angle-right" style="margin-left: 5px;"></i></li>
+					<li class="navbar-top-li"><a href="tongquan.html">Giới thiệu</a><i class="fa-solid fa-angle-right" style="margin-left: 5px;"></i></li>
+					<li class="navbar-top-li"><a href="tamnhin-sumang.html">Tầm nhìn, sứ mạng và chính sách ĐBCL</a></li>
+					<li class="navbar-top-li"></li>
+				</ul>
+				
+			</div>
+
+			@foreach (var about in Model.AboutsInCategory)
+			{
+				<div class="thongtin">
+					<h1>@about.name</h1>
+
+				</div>
+				<div>
+					@Html.Raw(about.content)
+				</div>
+
+				<div class="thongtin-gioithieu">
+					<strong style="font-size:20px; color:#e74c3c">Thông tin chi tiết về trường đại học</strong>
+					<iframe id="pdfViewer" frameborder="0" scrolling="auto" width="900px" height="1000px" src="~/Content/pdfjs/web/viewer.html?file=@Url.Content(@about.filepath)"></iframe>
+				</div>
+			}
+				
+		</div>
+
+	</div>
+</div>

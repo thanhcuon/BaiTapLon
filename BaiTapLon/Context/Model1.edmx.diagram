@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0cd3ef5824db441794f608163a898134" Name="Diagram1" ZoomLevel="59">
+        <EntityTypeShape EntityType="CTTDTModel.Slider" Width="1.5" PointX="9.125" PointY="1.5" />
+        <EntityTypeShape EntityType="CTTDTModel.Category" Width="1.5" PointX="0.75" PointY="0.625" />
+        <EntityTypeShape EntityType="CTTDTModel.Department" Width="1.5" PointX="5.375" PointY="6.125" />
+        <EntityTypeShape EntityType="CTTDTModel.Post" Width="1.5" PointX="5.875" PointY="1.5" />
+        <AssociationConnector Association="CTTDTModel.FK__Posts__category___3E52440B" />
+        <AssociationConnector Association="CTTDTModel.FK__Posts__departmen__18EBB532" />
+        <EntityTypeShape EntityType="CTTDTModel.student" Width="1.5" PointX="8.25" PointY="6" />
+        <AssociationConnector Association="CTTDTModel.FK__student__views__1EA48E88" />
+        <EntityTypeShape EntityType="CTTDTModel.Document" Width="1.5" PointX="2" PointY="6.375" />
+        <AssociationConnector Association="CTTDTModel.FK__Document__catego__52593CB8" />
+        <EntityTypeShape EntityType="CTTDTModel.About" Width="1.5" PointX="3" PointY="2" />
+        <AssociationConnector Association="CTTDTModel.FK__Abouts__category__75A278F5" />
+        <EntityTypeShape EntityType="CTTDTModel.Science" Width="1.5" PointX="11.25" PointY="6.75" />
+        <AssociationConnector Association="CTTDTModel.FK__Science__categor__31B762FC" />
+        <EntityTypeShape EntityType="CTTDTModel.University" Width="1.5" PointX="3" PointY="12" />
+        <AssociationConnector Association="CTTDTModel.FK__Universit__categ__51300E55" />
+        <EntityTypeShape EntityType="CTTDTModel.Major" Width="1.5" PointX="7.5" PointY="10.625" />
+        <AssociationConnector Association="CTTDTModel.FK__Majors__category__5D95E53A" />
+        <EntityTypeShape EntityType="CTTDTModel.Cours" Width="1.5" PointX="10.625" PointY="11.875" />
+        <AssociationConnector Association="CTTDTModel.FK__Courses__categor__56E8E7AB" />
+        <AssociationConnector Association="CTTDTModel.FK__Courses__departm__6166761E" />
+        <AssociationConnector Association="CTTDTModel.FK__Courses__univers__57DD0BE4" />
+        <AssociationConnector Association="CTTDTModel.FK__Majors__courses___5E8A0973" />
+        <EntityTypeShape EntityType="CTTDTModel.Courses_BanMoTa" Width="1.5" PointX="13.625" PointY="8.25" />
+        <EntityTypeShape EntityType="CTTDTModel.Courses_ChuongTrinhDaoTao" Width="1.5" PointX="7.625" PointY="14.875" />
+        <EntityTypeShape EntityType="CTTDTModel.Majors_BanMoTa" Width="1.5" PointX="15.875" PointY="4.5" />
+        <EntityTypeShape EntityType="CTTDTModel.Majors_ChuongTrinhDaoTao" Width="1.5" PointX="12.875" PointY="12.875" />
+        <EntityTypeShape EntityType="CTTDTModel.Universities_BanMoTa" Width="1.5" PointX="3" PointY="16.75" />
+        <EntityTypeShape EntityType="CTTDTModel.Universities_ChuongTrinhDaoTao" Width="1.5" PointX="3" PointY="20" />
+        <AssociationConnector Association="CTTDTModel.FK__Courses_B__categ__1D7B6025" />
+        <AssociationConnector Association="CTTDTModel.FK__Courses_C__categ__2BC97F7C" />
+        <AssociationConnector Association="CTTDTModel.FK__Majors_Ba__categ__251C81ED" />
+        <AssociationConnector Association="CTTDTModel.FK__Majors_Ch__categ__3B0BC30C" />
+        <AssociationConnector Association="CTTDTModel.FK__Universit__categ__662B2B3B" />
+        <AssociationConnector Association="CTTDTModel.FK__Universit__categ__7B264821" />
+        <AssociationConnector Association="CTTDTModel.FK__Courses_B__depar__1F63A897" />
+        <AssociationConnector Association="CTTDTModel.FK__Courses_B__unive__1E6F845E" />
+        <AssociationConnector Association="CTTDTModel.FK__Majors_Ba__cours__2610A626" />
+        <AssociationConnector Association="CTTDTModel.FK__Courses_C__depar__2DB1C7EE" />
+        <AssociationConnector Association="CTTDTModel.FK__Courses_C__unive__2CBDA3B5" />
+        <AssociationConnector Association="CTTDTModel.FK__Majors_Ch__cours__3BFFE745" />
+        <EntityTypeShape EntityType="CTTDTModel.User" Width="1.5" PointX="13" PointY="1.375" />
+        <EntityTypeShape EntityType="CTTDTModel.Robocon" Width="1.5" PointX="3" PointY="28.625" />
+        <EntityTypeShape EntityType="CTTDTModel.tbl_tuyensinh" Width="1.5" PointX="3" PointY="24.25" />
+        <AssociationConnector Association="CTTDTModel.FK__Robocon__categor__10216507" />
+        <AssociationConnector Association="CTTDTModel.FK__tbl_tuyen__categ__16CE6296" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

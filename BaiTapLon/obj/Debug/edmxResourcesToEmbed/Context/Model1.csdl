@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CTTDTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CTTDTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Sliders" EntityType="CTTDTModel.Slider" />
+    <EntitySet Name="Categories" EntityType="CTTDTModel.Category" />
+    <EntitySet Name="Departments" EntityType="CTTDTModel.Department" />
+    <EntitySet Name="Posts" EntityType="CTTDTModel.Post" />
+    <AssociationSet Name="FK__Posts__category___3E52440B" Association="CTTDTModel.FK__Posts__category___3E52440B">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__departmen__18EBB532" Association="CTTDTModel.FK__Posts__departmen__18EBB532">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <EntitySet Name="students" EntityType="CTTDTModel.student" />
+    <AssociationSet Name="FK__student__views__1EA48E88" Association="CTTDTModel.FK__student__views__1EA48E88">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="student" EntitySet="students" />
+    </AssociationSet>
+    <EntitySet Name="Documents" EntityType="CTTDTModel.Document" />
+    <AssociationSet Name="FK__Document__catego__52593CB8" Association="CTTDTModel.FK__Document__catego__52593CB8">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <EntitySet Name="Abouts" EntityType="CTTDTModel.About" />
+    <AssociationSet Name="FK__Abouts__category__75A278F5" Association="CTTDTModel.FK__Abouts__category__75A278F5">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="About" EntitySet="Abouts" />
+    </AssociationSet>
+    <EntitySet Name="Sciences" EntityType="CTTDTModel.Science" />
+    <AssociationSet Name="FK__Science__categor__31B762FC" Association="CTTDTModel.FK__Science__categor__31B762FC">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Science" EntitySet="Sciences" />
+    </AssociationSet>
+    <EntitySet Name="Universities" EntityType="CTTDTModel.University" />
+    <AssociationSet Name="FK__Universit__categ__51300E55" Association="CTTDTModel.FK__Universit__categ__51300E55">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="University" EntitySet="Universities" />
+    </AssociationSet>
+    <EntitySet Name="Majors" EntityType="CTTDTModel.Major" />
+    <AssociationSet Name="FK__Majors__category__5D95E53A" Association="CTTDTModel.FK__Majors__category__5D95E53A">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Major" EntitySet="Majors" />
+    </AssociationSet>
+    <EntitySet Name="Courses" EntityType="CTTDTModel.Cours" />
+    <AssociationSet Name="FK__Courses__categor__56E8E7AB" Association="CTTDTModel.FK__Courses__categor__56E8E7AB">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Cours" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses__departm__6166761E" Association="CTTDTModel.FK__Courses__departm__6166761E">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Cours" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses__univers__57DD0BE4" Association="CTTDTModel.FK__Courses__univers__57DD0BE4">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="Cours" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors__courses___5E8A0973" Association="CTTDTModel.FK__Majors__courses___5E8A0973">
+      <End Role="Cours" EntitySet="Courses" />
+      <End Role="Major" EntitySet="Majors" />
+    </AssociationSet>
+    <EntitySet Name="Courses_BanMoTa" EntityType="CTTDTModel.Courses_BanMoTa" />
+    <EntitySet Name="Courses_ChuongTrinhDaoTao" EntityType="CTTDTModel.Courses_ChuongTrinhDaoTao" />
+    <EntitySet Name="Majors_BanMoTa" EntityType="CTTDTModel.Majors_BanMoTa" />
+    <EntitySet Name="Majors_ChuongTrinhDaoTao" EntityType="CTTDTModel.Majors_ChuongTrinhDaoTao" />
+    <EntitySet Name="Universities_BanMoTa" EntityType="CTTDTModel.Universities_BanMoTa" />
+    <EntitySet Name="Universities_ChuongTrinhDaoTao" EntityType="CTTDTModel.Universities_ChuongTrinhDaoTao" />
+    <AssociationSet Name="FK__Courses_B__categ__1D7B6025" Association="CTTDTModel.FK__Courses_B__categ__1D7B6025">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Courses_BanMoTa" EntitySet="Courses_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_C__categ__2BC97F7C" Association="CTTDTModel.FK__Courses_C__categ__2BC97F7C">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Courses_ChuongTrinhDaoTao" EntitySet="Courses_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors_Ba__categ__251C81ED" Association="CTTDTModel.FK__Majors_Ba__categ__251C81ED">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Majors_BanMoTa" EntitySet="Majors_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors_Ch__categ__3B0BC30C" Association="CTTDTModel.FK__Majors_Ch__categ__3B0BC30C">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Majors_ChuongTrinhDaoTao" EntitySet="Majors_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Universit__categ__662B2B3B" Association="CTTDTModel.FK__Universit__categ__662B2B3B">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Universities_BanMoTa" EntitySet="Universities_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Universit__categ__7B264821" Association="CTTDTModel.FK__Universit__categ__7B264821">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Universities_ChuongTrinhDaoTao" EntitySet="Universities_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_B__depar__1F63A897" Association="CTTDTModel.FK__Courses_B__depar__1F63A897">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Courses_BanMoTa" EntitySet="Courses_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_B__unive__1E6F845E" Association="CTTDTModel.FK__Courses_B__unive__1E6F845E">
+      <End Role="Universities_BanMoTa" EntitySet="Universities_BanMoTa" />
+      <End Role="Courses_BanMoTa" EntitySet="Courses_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors_Ba__cours__2610A626" Association="CTTDTModel.FK__Majors_Ba__cours__2610A626">
+      <End Role="Courses_BanMoTa" EntitySet="Courses_BanMoTa" />
+      <End Role="Majors_BanMoTa" EntitySet="Majors_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_C__depar__2DB1C7EE" Association="CTTDTModel.FK__Courses_C__depar__2DB1C7EE">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Courses_ChuongTrinhDaoTao" EntitySet="Courses_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_C__unive__2CBDA3B5" Association="CTTDTModel.FK__Courses_C__unive__2CBDA3B5">
+      <End Role="Universities_ChuongTrinhDaoTao" EntitySet="Universities_ChuongTrinhDaoTao" />
+      <End Role="Courses_ChuongTrinhDaoTao" EntitySet="Courses_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors_Ch__cours__3BFFE745" Association="CTTDTModel.FK__Majors_Ch__cours__3BFFE745">
+      <End Role="Courses_ChuongTrinhDaoTao" EntitySet="Courses_ChuongTrinhDaoTao" />
+      <End Role="Majors_ChuongTrinhDaoTao" EntitySet="Majors_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <EntitySet Name="Users" EntityType="CTTDTModel.User" />
+    <EntitySet Name="Robocons" EntityType="CTTDTModel.Robocon" />
+    <EntitySet Name="tbl_tuyensinh" EntityType="CTTDTModel.tbl_tuyensinh" />
+    <AssociationSet Name="FK__Robocon__categor__10216507" Association="CTTDTModel.FK__Robocon__categor__10216507">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Robocon" EntitySet="Robocons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_tuyen__categ__16CE6296" Association="CTTDTModel.FK__tbl_tuyen__categ__16CE6296">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="tbl_tuyensinh" EntitySet="tbl_tuyensinh" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="parent_id" Type="Int32" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="CTTDTModel.FK__Posts__category___3E52440B" FromRole="Category" ToRole="Post" />
+    <NavigationProperty Name="students" Relationship="CTTDTModel.FK__student__views__1EA48E88" FromRole="Category" ToRole="student" />
+    <NavigationProperty Name="Documents" Relationship="CTTDTModel.FK__Document__catego__52593CB8" FromRole="Category" ToRole="Document" />
+    <NavigationProperty Name="Abouts" Relationship="CTTDTModel.FK__Abouts__category__75A278F5" FromRole="Category" ToRole="About" />
+    <NavigationProperty Name="Sciences" Relationship="CTTDTModel.FK__Science__categor__31B762FC" FromRole="Category" ToRole="Science" />
+    <NavigationProperty Name="Universities" Relationship="CTTDTModel.FK__Universit__categ__51300E55" FromRole="Category" ToRole="University" />
+    <NavigationProperty Name="Majors" Relationship="CTTDTModel.FK__Majors__category__5D95E53A" FromRole="Category" ToRole="Major" />
+    <NavigationProperty Name="Courses" Relationship="CTTDTModel.FK__Courses__categor__56E8E7AB" FromRole="Category" ToRole="Cours" />
+    <NavigationProperty Name="Courses_BanMoTa" Relationship="CTTDTModel.FK__Courses_B__categ__1D7B6025" FromRole="Category" ToRole="Courses_BanMoTa" />
+    <NavigationProperty Name="Courses_ChuongTrinhDaoTao" Relationship="CTTDTModel.FK__Courses_C__categ__2BC97F7C" FromRole="Category" ToRole="Courses_ChuongTrinhDaoTao" />
+    <NavigationProperty Name="Majors_BanMoTa" Relationship="CTTDTModel.FK__Majors_Ba__categ__251C81ED" FromRole="Category" ToRole="Majors_BanMoTa" />
+    <NavigationProperty Name="Majors_ChuongTrinhDaoTao" Relationship="CTTDTModel.FK__Majors_Ch__categ__3B0BC30C" FromRole="Category" ToRole="Majors_ChuongTrinhDaoTao" />
+    <NavigationProperty Name="Universities_BanMoTa" Relationship="CTTDTModel.FK__Universit__categ__662B2B3B" FromRole="Category" ToRole="Universities_BanMoTa" />
+    <NavigationProperty Name="Universities_ChuongTrinhDaoTao" Relationship="CTTDTModel.FK__Universit__categ__7B264821" FromRole="Category" ToRole="Universities_ChuongTrinhDaoTao" />
+    <NavigationProperty Name="Robocons" Relationship="CTTDTModel.FK__Robocon__categor__10216507" FromRole="Category" ToRole="Robocon" />
+    <NavigationProperty Name="tbl_tuyensinh" Relationship="CTTDTModel.FK__tbl_tuyen__categ__16CE6296" FromRole="Category" ToRole="tbl_tuyensinh" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Posts" Relationship="CTTDTModel.FK__Posts__departmen__18EBB532" FromRole="Department" ToRole="Post" />
+    <NavigationProperty Name="Courses" Relationship="CTTDTModel.FK__Courses__departm__6166761E" FromRole="Department" ToRole="Cours" />
+    <NavigationProperty Name="Courses_BanMoTa" Relationship="CTTDTModel.FK__Courses_B__depar__1F63A897" FromRole="Department" ToRole="Courses_BanMoTa" />
+    <NavigationProperty Name="Courses_ChuongTrinhDaoTao" Relationship="CTTDTModel.FK__Courses_C__depar__2DB1C7EE" FromRole="Department" ToRole="Courses_ChuongTrinhDaoTao" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="tac_gia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="department_id" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Posts__category___3E52440B" FromRole="Post" ToRole="Category" />
+    <NavigationProperty Name="Department" Relationship="CTTDTModel.FK__Posts__departmen__18EBB532" FromRole="Post" ToRole="Department" />
+  </EntityType>
+  <Association Name="FK__Posts__category___3E52440B">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__departmen__18EBB532">
+    <End Type="CTTDTModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="tac_gia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__student__views__1EA48E88" FromRole="student" ToRole="Category" />
+  </EntityType>
+  <Association Name="FK__student__views__1EA48E88">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.student" Role="student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="strong" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="nguoi_gui" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="downloads" Type="Int32" />
+    <Property Name="versions" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tac_gia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ban_quyen" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Evaluate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Document__catego__52593CB8" FromRole="Document" ToRole="Category" />
+  </EntityType>
+  <Association Name="FK__Document__catego__52593CB8">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="tac_gia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="views" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Abouts__category__75A278F5" FromRole="About" ToRole="Category" />
+  </EntityType>
+  <Association Name="FK__Abouts__category__75A278F5">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.About" Role="About" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="About">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Science">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="tac_gia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Science__categor__31B762FC" FromRole="Science" ToRole="Category" />
+  </EntityType>
+  <Association Name="FK__Science__categor__31B762FC">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Science" Role="Science" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Science">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="University">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Universit__categ__51300E55" FromRole="University" ToRole="Category" />
+    <NavigationProperty Name="Courses" Relationship="CTTDTModel.FK__Courses__univers__57DD0BE4" FromRole="University" ToRole="Cours" />
+  </EntityType>
+  <Association Name="FK__Universit__categ__51300E55">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.University" Role="University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="University">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Major">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="courses_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Majors__category__5D95E53A" FromRole="Major" ToRole="Category" />
+    <NavigationProperty Name="Cours" Relationship="CTTDTModel.FK__Majors__courses___5E8A0973" FromRole="Major" ToRole="Cours" />
+  </EntityType>
+  <Association Name="FK__Majors__category__5D95E53A">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Major" Role="Major" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Major">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="universities_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="year" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="department_id" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Courses__categor__56E8E7AB" FromRole="Cours" ToRole="Category" />
+    <NavigationProperty Name="Department" Relationship="CTTDTModel.FK__Courses__departm__6166761E" FromRole="Cours" ToRole="Department" />
+    <NavigationProperty Name="University" Relationship="CTTDTModel.FK__Courses__univers__57DD0BE4" FromRole="Cours" ToRole="University" />
+    <NavigationProperty Name="Majors" Relationship="CTTDTModel.FK__Majors__courses___5E8A0973" FromRole="Cours" ToRole="Major" />
+  </EntityType>
+  <Association Name="FK__Courses__categor__56E8E7AB">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Cours" Role="Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cours">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses__departm__6166761E">
+    <End Type="CTTDTModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Cours" Role="Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cours">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses__univers__57DD0BE4">
+    <End Type="CTTDTModel.University" Role="University" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Cours" Role="Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cours">
+        <PropertyRef Name="universities_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors__courses___5E8A0973">
+    <End Type="CTTDTModel.Cours" Role="Cours" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Major" Role="Major" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cours">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Major">
+        <PropertyRef Name="courses_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Courses_BanMoTa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="universities_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="department_id" Type="Int32" />
+    <Property Name="year" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Courses_B__categ__1D7B6025" FromRole="Courses_BanMoTa" ToRole="Category" />
+    <NavigationProperty Name="Department" Relationship="CTTDTModel.FK__Courses_B__depar__1F63A897" FromRole="Courses_BanMoTa" ToRole="Department" />
+    <NavigationProperty Name="Universities_BanMoTa" Relationship="CTTDTModel.FK__Courses_B__unive__1E6F845E" FromRole="Courses_BanMoTa" ToRole="Universities_BanMoTa" />
+    <NavigationProperty Name="Majors_BanMoTa" Relationship="CTTDTModel.FK__Majors_Ba__cours__2610A626" FromRole="Courses_BanMoTa" ToRole="Majors_BanMoTa" />
+  </EntityType>
+  <EntityType Name="Courses_ChuongTrinhDaoTao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="universities_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="department_id" Type="Int32" />
+    <Property Name="year" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Courses_C__categ__2BC97F7C" FromRole="Courses_ChuongTrinhDaoTao" ToRole="Category" />
+    <NavigationProperty Name="Department" Relationship="CTTDTModel.FK__Courses_C__depar__2DB1C7EE" FromRole="Courses_ChuongTrinhDaoTao" ToRole="Department" />
+    <NavigationProperty Name="Universities_ChuongTrinhDaoTao" Relationship="CTTDTModel.FK__Courses_C__unive__2CBDA3B5" FromRole="Courses_ChuongTrinhDaoTao" ToRole="Universities_ChuongTrinhDaoTao" />
+    <NavigationProperty Name="Majors_ChuongTrinhDaoTao" Relationship="CTTDTModel.FK__Majors_Ch__cours__3BFFE745" FromRole="Courses_ChuongTrinhDaoTao" ToRole="Majors_ChuongTrinhDaoTao" />
+  </EntityType>
+  <EntityType Name="Majors_BanMoTa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="courses_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Majors_Ba__categ__251C81ED" FromRole="Majors_BanMoTa" ToRole="Category" />
+    <NavigationProperty Name="Courses_BanMoTa" Relationship="CTTDTModel.FK__Majors_Ba__cours__2610A626" FromRole="Majors_BanMoTa" ToRole="Courses_BanMoTa" />
+  </EntityType>
+  <EntityType Name="Majors_ChuongTrinhDaoTao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="courses_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Majors_Ch__categ__3B0BC30C" FromRole="Majors_ChuongTrinhDaoTao" ToRole="Category" />
+    <NavigationProperty Name="Courses_ChuongTrinhDaoTao" Relationship="CTTDTModel.FK__Majors_Ch__cours__3BFFE745" FromRole="Majors_ChuongTrinhDaoTao" ToRole="Courses_ChuongTrinhDaoTao" />
+  </EntityType>
+  <EntityType Name="Universities_BanMoTa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Universit__categ__662B2B3B" FromRole="Universities_BanMoTa" ToRole="Category" />
+    <NavigationProperty Name="Courses_BanMoTa" Relationship="CTTDTModel.FK__Courses_B__unive__1E6F845E" FromRole="Universities_BanMoTa" ToRole="Courses_BanMoTa" />
+  </EntityType>
+  <EntityType Name="Universities_ChuongTrinhDaoTao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Universit__categ__7B264821" FromRole="Universities_ChuongTrinhDaoTao" ToRole="Category" />
+    <NavigationProperty Name="Courses_ChuongTrinhDaoTao" Relationship="CTTDTModel.FK__Courses_C__unive__2CBDA3B5" FromRole="Universities_ChuongTrinhDaoTao" ToRole="Courses_ChuongTrinhDaoTao" />
+  </EntityType>
+  <Association Name="FK__Courses_B__categ__1D7B6025">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Courses_BanMoTa" Role="Courses_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_BanMoTa">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_C__categ__2BC97F7C">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Courses_ChuongTrinhDaoTao" Role="Courses_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_ChuongTrinhDaoTao">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors_Ba__categ__251C81ED">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Majors_BanMoTa" Role="Majors_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Majors_BanMoTa">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors_Ch__categ__3B0BC30C">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Majors_ChuongTrinhDaoTao" Role="Majors_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Majors_ChuongTrinhDaoTao">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Universit__categ__662B2B3B">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Universities_BanMoTa" Role="Universities_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Universities_BanMoTa">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Universit__categ__7B264821">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Universities_ChuongTrinhDaoTao" Role="Universities_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Universities_ChuongTrinhDaoTao">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_B__depar__1F63A897">
+    <End Type="CTTDTModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Courses_BanMoTa" Role="Courses_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_BanMoTa">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_B__unive__1E6F845E">
+    <End Type="CTTDTModel.Universities_BanMoTa" Role="Universities_BanMoTa" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Courses_BanMoTa" Role="Courses_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities_BanMoTa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_BanMoTa">
+        <PropertyRef Name="universities_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors_Ba__cours__2610A626">
+    <End Type="CTTDTModel.Courses_BanMoTa" Role="Courses_BanMoTa" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Majors_BanMoTa" Role="Majors_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses_BanMoTa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Majors_BanMoTa">
+        <PropertyRef Name="courses_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_C__depar__2DB1C7EE">
+    <End Type="CTTDTModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Courses_ChuongTrinhDaoTao" Role="Courses_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_ChuongTrinhDaoTao">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_C__unive__2CBDA3B5">
+    <End Type="CTTDTModel.Universities_ChuongTrinhDaoTao" Role="Universities_ChuongTrinhDaoTao" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Courses_ChuongTrinhDaoTao" Role="Courses_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities_ChuongTrinhDaoTao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_ChuongTrinhDaoTao">
+        <PropertyRef Name="universities_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors_Ch__cours__3BFFE745">
+    <End Type="CTTDTModel.Courses_ChuongTrinhDaoTao" Role="Courses_ChuongTrinhDaoTao" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Majors_ChuongTrinhDaoTao" Role="Majors_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses_ChuongTrinhDaoTao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Majors_ChuongTrinhDaoTao">
+        <PropertyRef Name="courses_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="remember_token" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="role" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Robocon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="tac_gia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__Robocon__categor__10216507" FromRole="Robocon" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="tbl_tuyensinh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="filepath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="tac_gia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Category" Relationship="CTTDTModel.FK__tbl_tuyen__categ__16CE6296" FromRole="tbl_tuyensinh" ToRole="Category" />
+  </EntityType>
+  <Association Name="FK__Robocon__categor__10216507">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.Robocon" Role="Robocon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Robocon">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_tuyen__categ__16CE6296">
+    <End Type="CTTDTModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="CTTDTModel.tbl_tuyensinh" Role="tbl_tuyensinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_tuyensinh">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

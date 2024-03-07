@@ -1,0 +1,72 @@
+﻿<div class="container-chuandaura">
+	<div class="grid2">
+		<div class="gird-column2">
+			<div class="navbar-gioithieu">
+				<h2 class="navbar-gioithieu-h2">ĐÀO TẠO</h2>
+				<ul class="navbar-gioithieu-ul">
+					@model BaiTapLon.Models.HomeViewModel
+					@foreach (var category in Model.ChildCategories)
+					{
+						<li class="narbar-gioithieu-li">
+							@if (!string.IsNullOrEmpty(category.url))
+							{
+								<a href="@category.url/@category.id" class="narbar-gioithieu-a">@category.name</a>
+							}
+							else
+							{
+								<a href="#" class="narbar-gioithieu-a">@category.name</a>
+							}
+						</li>
+					}
+				</ul>
+			</div>
+		</div>
+		<div class="gird-column8">
+			<div class="navbar-top">
+				<ul class="navbar-top-ul">
+					<li class="navbar-top-li"><a href="home.html"><i class="fa fa-lg fa-home"></i></a><i class="fa-solid fa-angle-right" style="margin-left: 5px;"></i></li>
+					<li class="navbar-top-li"><a href="tongquan.html">Giới thiệu</a><i class="fa-solid fa-angle-right" style="margin-left: 5px;"></i></li>
+					<li class="navbar-top-li"><a href="tamnhin-sumang.html">Tầm nhìn, sứ mạng và chính sách ĐBCL</a></li>
+					<li class="navbar-top-li"></li>
+				</ul>
+			</div>
+			<div class="trietly">
+				@if (Model.BanMoTa.Any())
+				{
+					<h1 class="chuandaura">@Model.BanMoTa.First().Category.name</h1>
+				}
+				else
+				{
+					<p>Không có dữ liệu để hiển thị</p>
+				}
+				<ul class="chuan-dau-ra">
+					@foreach (var BanMoTa in Model.BanMoTa)
+					{
+						<li class="chuan-dau-ra2">
+
+							@if (BanMoTa.name == "Đại Học")
+							{
+								<a href="/Home/BanMoTaDaiHoc/@BanMoTa.category_id">
+									<i class="fa fa-graduation-cap p-3"></i>
+								</a>
+							}
+							else if (BanMoTa.name == "Sau đại học")
+							{
+								<a href="/Home/BanMoTaSauDaiHoc/@BanMoTa.category_id">
+									<i class="fa-solid fa-building-columns"></i>
+								</a>
+							}
+
+
+							<br />
+							@BanMoTa.name
+						</li>
+					}
+
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+

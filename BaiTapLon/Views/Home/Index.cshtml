@@ -1,0 +1,155 @@
+﻿<contaiter class="contaiter">
+	<div class="grid">
+		<div>
+			<marquee id="myMarquee" class="content-marquee">
+				<a href="" class="content-marquee-a"> <i class="fa-solid fa-forward"></i>&ensp;LỄ BẢO VỆ KHÓA LUẬN TỐT NGHIỆP TRƯỜNG ĐẠI HỌC SAO ĐỎ HỆ ĐẠI HỌC</a>
+				<a href="" class="content-marquee-a">&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-forward"></i>&ensp; Thông báo thời hạn đăng ký dự tuyển nghiên cứu sinh năm 2023</a>
+				<a href="" class="content-marquee-a">
+					&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-forward"></i>&ensp;Danh sách phòng thi môn Ngoại ngữ - Kỳ thi tuyển sinh cao học Đợt 3 năm 2023
+				</a>
+			</marquee>
+		</div>
+		<div class="slideshow-container">
+			@foreach (var slider in Model.Sliders)
+			{
+				<div class="mySlides fade">
+					<img src="@Url.Content(@slider.image_path)" style="width:100%">
+					<div class="text">@slider.name</div>
+				</div>
+			}
+
+			<a class="prev" onclick="plusSlides(-1)">❮</a>
+			<a class="next" onclick="plusSlides(1)">❯</a>
+		</div>
+		<br>
+
+		<div style="text-align:center">
+			@for (var i = 0; i < Model.Sliders.Count; i++)
+			{
+				<span class="dot" onclick="currentSlide(@i + 1)"></span>
+			}
+		</div>
+
+	</div>
+</contaiter>
+<div class="danhmuc">
+	<div class="grid">
+		<ul class="danhmuc-list">
+			<li class="danhmuc-li">
+				<a href="http://daotao.saodo.edu.vn/">
+					<img src="https://saodo.edu.vn/uploads/menu/education.png">
+				</a>
+				<br />
+				<a href="#" class="danhmuc-li-a">Học vụ sinh viên</a>
+			</li>
+			<li class="danhmuc-li">
+				<a href="#">
+					<img src="https://saodo.edu.vn/uploads/menu/elearning.png">
+				</a>
+				<br />
+				<a href="#" class="danhmuc-li-a">Học tập trực tiếp</a>
+			</li>
+			<li class="danhmuc-li">
+				<a href="http://daotao.saodo.edu.vn/">
+					<img src="https://saodo.edu.vn/uploads/menu/library.png">
+				</a>
+				<br />
+				<a href="#" class="danhmuc-li-a">Thư viện điện tử</a>
+			</li>
+			<li class="danhmuc-li">
+				<a href="http://daotao.saodo.edu.vn/">
+					<img src="https://saodo.edu.vn/uploads/menu/apartment.png">
+				</a>
+				<br />
+				<a href="#" class="danhmuc-li-a">Ký túc xá</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="item-danhmuc">
+	<div class="grid">
+		<div class="thumuc">
+			<ul class="danhmuc-ul">
+				<li class="itemdanhmuc-li"><a href="#" class="itemdanhmuc-li-a"> <i class="fa-solid fa-newspaper"></i>   Tin tức & sự kiện</a></li>
+				<li class="itemdanhmuc-li"><a href="#" class="itemdanhmuc-li-a"> <i class="fa-solid fa-newspaper"></i>   Hoạt động đào tạo</a></li>
+				<li class="itemdanhmuc-li"><a href="#" class="itemdanhmuc-li-a"> <i class="fa-regular fa-image"></i> Phóng sự ảnh</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="listthumuc">
+		<div class="grid">
+			<div class="gird-column3">
+				<ul class="tin-tuc-su-kien">
+					@foreach (var post in Model.LatestPosts)
+					{
+						<li class="tin-tuc-su-kien-li">
+							<a href="@Url.Action("ViewChiTiet", "Home", new { id = post.id })" class="tin-tuc-su-kien-a">
+								<img src="@Url.Content(post.image_path)" />
+								@post.name
+							</a>
+						</li>
+					}
+				</ul>
+
+			</div>
+			<div class="gird-column3">
+				<ul class="tin-tuc-su-kien">
+					<li class="tin-tuc-su-kien-li">
+						<a href="#" class="tin-tuc-su-kien-a">
+							<img src="~/Content/asset/upload/abc.jpg" />
+							Tập huấn “Cập nhật kiến thức về ô tô điện” cho giảng viên các trường khu vực Đông Bắc bộ
+						</a>
+					</li>
+					<li class="tin-tuc-su-kien-li">
+						<a href="#" class="tin-tuc-su-kien-a">
+							<img src="~/Content/asset/upload/abc.jpg" />
+							Tập huấn “Cập nhật kiến thức về ô tô điện” cho giảng viên các trường khu vực Đông Bắc bộ
+						</a>
+					</li>
+					<li class="tin-tuc-su-kien-li">
+						<a href="#" class="tin-tuc-su-kien-a">
+							<img src="~/Content/asset/upload/abc.jpg" />
+							Tập huấn “Cập nhật kiến thức về ô tô điện” cho giảng viên các trường khu vực Đông Bắc bộ
+						</a>
+					</li>
+					<li class="tin-tuc-su-kien-li">
+						<a href="#" class="tin-tuc-su-kien-a">
+							<img src="~/Content/asset/upload/abc.jpg" />
+							Tập huấn “Cập nhật kiến thức về ô tô điện” cho giảng viên các trường khu vực Đông Bắc bộ
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="gird-column32">
+				<div class="hinhanh">
+					<div class="slide-container2">
+						<div class="slides">
+							@foreach (var item in Model.PostsView)
+							{
+								<div class="slide">
+									<a href="@Url.Action("ViewChiTiet", "Home", new { id = item.Id })"><img src="@Url.Content(item.PostImagePath)" alt="@(item.DepartmentName)" style="width:100%"></a>
+									<div class="text-slide2">@item.DepartmentName</div>
+								</div>
+							}
+						</div>
+					</div>
+					<div class="lienketnhanh">
+						<p><i class="fa-solid fa-book"></i>  Văn bản</p>
+						<ul>
+							@foreach (var document in Model.LatestDocuments)
+							{
+								<li class="lienketnhanh-li"><a href="@Url.Action("ViewVanBan", "Home", new { id = document.id })" class="lienketnhanh-a"><i class="fa-regular fa-file"></i>&nbsp;&nbsp;@document.name</a></li>
+
+							}
+						</ul>
+					</div>
+					<div id="bao-congthuong">
+						<a href="https://congthuong.vn/"><img src="https://saodo.edu.vn/uploads/banners/congthuong.jpg" alt="" style="width:200px"></a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>

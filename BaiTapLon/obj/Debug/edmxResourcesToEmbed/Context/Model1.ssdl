@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CTTDTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Abouts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="255" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="255" />
+    <Property Name="views" Type="int" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="url" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="universities_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="year" Type="nvarchar" MaxLength="255" />
+    <Property Name="department_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Courses_BanMoTa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="universities_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="department_id" Type="int" />
+    <Property Name="year" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Courses_ChuongTrinhDaoTao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="universities_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="department_id" Type="int" />
+    <Property Name="year" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="strong" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="255" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="nguoi_gui" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="views" Type="int" />
+    <Property Name="downloads" Type="int" />
+    <Property Name="versions" Type="nvarchar" MaxLength="255" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="255" />
+    <Property Name="Website" Type="nvarchar(max)" />
+    <Property Name="ban_quyen" Type="nvarchar" MaxLength="255" />
+    <Property Name="Evaluate" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Majors">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="courses_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Majors_BanMoTa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="courses_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Majors_ChuongTrinhDaoTao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="courses_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="image_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="image_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="255" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="views" Type="int" />
+    <Property Name="filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="255" />
+    <Property Name="department_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Robocon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="image_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="image_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="255" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="255" />
+    <Property Name="views" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Science">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="image_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="image_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="255" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="255" />
+    <Property Name="views" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Sliders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="image_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="image_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="image_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="image_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="255" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="255" />
+    <Property Name="views" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_tuyensinh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="image_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="image_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="255" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="255" />
+    <Property Name="views" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Universities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Universities_BanMoTa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Universities_ChuongTrinhDaoTao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="slug" Type="nvarchar" MaxLength="255" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="remember_token" Type="nvarchar" MaxLength="255" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="role" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK__Abouts__category__75A278F5">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Abouts" Type="Self.Abouts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Abouts">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses__categor__56E8E7AB">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses__departm__6166761E">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses__univers__57DD0BE4">
+    <End Role="Universities" Type="Self.Universities" Multiplicity="0..1" />
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="universities_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_B__categ__1D7B6025">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Courses_BanMoTa" Type="Self.Courses_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_BanMoTa">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_B__depar__1F63A897">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Courses_BanMoTa" Type="Self.Courses_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_BanMoTa">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_B__unive__1E6F845E">
+    <End Role="Universities_BanMoTa" Type="Self.Universities_BanMoTa" Multiplicity="0..1" />
+    <End Role="Courses_BanMoTa" Type="Self.Courses_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities_BanMoTa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_BanMoTa">
+        <PropertyRef Name="universities_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_C__categ__2BC97F7C">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Courses_ChuongTrinhDaoTao" Type="Self.Courses_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_ChuongTrinhDaoTao">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_C__depar__2DB1C7EE">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Courses_ChuongTrinhDaoTao" Type="Self.Courses_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_ChuongTrinhDaoTao">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses_C__unive__2CBDA3B5">
+    <End Role="Universities_ChuongTrinhDaoTao" Type="Self.Universities_ChuongTrinhDaoTao" Multiplicity="0..1" />
+    <End Role="Courses_ChuongTrinhDaoTao" Type="Self.Courses_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities_ChuongTrinhDaoTao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Courses_ChuongTrinhDaoTao">
+        <PropertyRef Name="universities_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Document__catego__52593CB8">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors__category__5D95E53A">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Majors" Type="Self.Majors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Majors">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors__courses___5E8A0973">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+    <End Role="Majors" Type="Self.Majors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Majors">
+        <PropertyRef Name="courses_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors_Ba__categ__251C81ED">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Majors_BanMoTa" Type="Self.Majors_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Majors_BanMoTa">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors_Ba__cours__2610A626">
+    <End Role="Courses_BanMoTa" Type="Self.Courses_BanMoTa" Multiplicity="0..1" />
+    <End Role="Majors_BanMoTa" Type="Self.Majors_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses_BanMoTa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Majors_BanMoTa">
+        <PropertyRef Name="courses_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors_Ch__categ__3B0BC30C">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Majors_ChuongTrinhDaoTao" Type="Self.Majors_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Majors_ChuongTrinhDaoTao">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors_Ch__cours__3BFFE745">
+    <End Role="Courses_ChuongTrinhDaoTao" Type="Self.Courses_ChuongTrinhDaoTao" Multiplicity="0..1" />
+    <End Role="Majors_ChuongTrinhDaoTao" Type="Self.Majors_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses_ChuongTrinhDaoTao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Majors_ChuongTrinhDaoTao">
+        <PropertyRef Name="courses_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__category___3E52440B">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__departmen__18EBB532">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Robocon__categor__10216507">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Robocon" Type="Self.Robocon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Robocon">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Science__categor__31B762FC">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Science" Type="Self.Science" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Science">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__student__views__1EA48E88">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="student" Type="Self.student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_tuyen__categ__16CE6296">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="tbl_tuyensinh" Type="Self.tbl_tuyensinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_tuyensinh">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Universit__categ__51300E55">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Universities" Type="Self.Universities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Universities">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Universit__categ__662B2B3B">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Universities_BanMoTa" Type="Self.Universities_BanMoTa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Universities_BanMoTa">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Universit__categ__7B264821">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Universities_ChuongTrinhDaoTao" Type="Self.Universities_ChuongTrinhDaoTao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Universities_ChuongTrinhDaoTao">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CTTDTModelStoreContainer">
+    <EntitySet Name="Abouts" EntityType="Self.Abouts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Courses_BanMoTa" EntityType="Self.Courses_BanMoTa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Courses_ChuongTrinhDaoTao" EntityType="Self.Courses_ChuongTrinhDaoTao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Majors" EntityType="Self.Majors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Majors_BanMoTa" EntityType="Self.Majors_BanMoTa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Majors_ChuongTrinhDaoTao" EntityType="Self.Majors_ChuongTrinhDaoTao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Robocon" EntityType="Self.Robocon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Science" EntityType="Self.Science" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sliders" EntityType="Self.Sliders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_tuyensinh" EntityType="Self.tbl_tuyensinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Universities" EntityType="Self.Universities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Universities_BanMoTa" EntityType="Self.Universities_BanMoTa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Universities_ChuongTrinhDaoTao" EntityType="Self.Universities_ChuongTrinhDaoTao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Abouts__category__75A278F5" Association="Self.FK__Abouts__category__75A278F5">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Abouts" EntitySet="Abouts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses__categor__56E8E7AB" Association="Self.FK__Courses__categor__56E8E7AB">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses__departm__6166761E" Association="Self.FK__Courses__departm__6166761E">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses__univers__57DD0BE4" Association="Self.FK__Courses__univers__57DD0BE4">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_B__categ__1D7B6025" Association="Self.FK__Courses_B__categ__1D7B6025">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Courses_BanMoTa" EntitySet="Courses_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_B__depar__1F63A897" Association="Self.FK__Courses_B__depar__1F63A897">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Courses_BanMoTa" EntitySet="Courses_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_B__unive__1E6F845E" Association="Self.FK__Courses_B__unive__1E6F845E">
+      <End Role="Universities_BanMoTa" EntitySet="Universities_BanMoTa" />
+      <End Role="Courses_BanMoTa" EntitySet="Courses_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_C__categ__2BC97F7C" Association="Self.FK__Courses_C__categ__2BC97F7C">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Courses_ChuongTrinhDaoTao" EntitySet="Courses_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_C__depar__2DB1C7EE" Association="Self.FK__Courses_C__depar__2DB1C7EE">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Courses_ChuongTrinhDaoTao" EntitySet="Courses_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses_C__unive__2CBDA3B5" Association="Self.FK__Courses_C__unive__2CBDA3B5">
+      <End Role="Universities_ChuongTrinhDaoTao" EntitySet="Universities_ChuongTrinhDaoTao" />
+      <End Role="Courses_ChuongTrinhDaoTao" EntitySet="Courses_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Document__catego__52593CB8" Association="Self.FK__Document__catego__52593CB8">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors__category__5D95E53A" Association="Self.FK__Majors__category__5D95E53A">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Majors" EntitySet="Majors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors__courses___5E8A0973" Association="Self.FK__Majors__courses___5E8A0973">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Majors" EntitySet="Majors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors_Ba__categ__251C81ED" Association="Self.FK__Majors_Ba__categ__251C81ED">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Majors_BanMoTa" EntitySet="Majors_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors_Ba__cours__2610A626" Association="Self.FK__Majors_Ba__cours__2610A626">
+      <End Role="Courses_BanMoTa" EntitySet="Courses_BanMoTa" />
+      <End Role="Majors_BanMoTa" EntitySet="Majors_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors_Ch__categ__3B0BC30C" Association="Self.FK__Majors_Ch__categ__3B0BC30C">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Majors_ChuongTrinhDaoTao" EntitySet="Majors_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors_Ch__cours__3BFFE745" Association="Self.FK__Majors_Ch__cours__3BFFE745">
+      <End Role="Courses_ChuongTrinhDaoTao" EntitySet="Courses_ChuongTrinhDaoTao" />
+      <End Role="Majors_ChuongTrinhDaoTao" EntitySet="Majors_ChuongTrinhDaoTao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__category___3E52440B" Association="Self.FK__Posts__category___3E52440B">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__departmen__18EBB532" Association="Self.FK__Posts__departmen__18EBB532">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Robocon__categor__10216507" Association="Self.FK__Robocon__categor__10216507">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Robocon" EntitySet="Robocon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Science__categor__31B762FC" Association="Self.FK__Science__categor__31B762FC">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Science" EntitySet="Science" />
+    </AssociationSet>
+    <AssociationSet Name="FK__student__views__1EA48E88" Association="Self.FK__student__views__1EA48E88">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="student" EntitySet="student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_tuyen__categ__16CE6296" Association="Self.FK__tbl_tuyen__categ__16CE6296">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="tbl_tuyensinh" EntitySet="tbl_tuyensinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Universit__categ__51300E55" Association="Self.FK__Universit__categ__51300E55">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Universities" EntitySet="Universities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Universit__categ__662B2B3B" Association="Self.FK__Universit__categ__662B2B3B">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Universities_BanMoTa" EntitySet="Universities_BanMoTa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Universit__categ__7B264821" Association="Self.FK__Universit__categ__7B264821">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Universities_ChuongTrinhDaoTao" EntitySet="Universities_ChuongTrinhDaoTao" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

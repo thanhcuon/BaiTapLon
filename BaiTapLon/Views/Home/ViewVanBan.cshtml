@@ -1,0 +1,173 @@
+﻿<div class="container-chitiet-vanban">
+	<div class="grid2">
+		<div class="gird-column2">
+			<div class="navbar-gioithieu">
+				<h2 class="navbar-gioithieu-h2">VĂN BẢN</h2>
+				@model BaiTapLon.Models.HomeViewModel
+				@foreach (var category in Model.ChildCategories)
+				{
+				<li class="narbar-gioithieu-li">
+					@if (!string.IsNullOrEmpty(category.url))
+					{
+						<a href="@category.url/@category.id" class="narbar-gioithieu-a">@category.name</a>
+					}
+					else
+					{
+						<a href="#" class="narbar-gioithieu-a">@category.name</a>
+					}
+				</li>
+				}
+			</div>
+		</div>
+		<div class="gird-column8">
+			<div class="navbar-top">
+				<ul class="navbar-top-ul">
+					<li class="navbar-top-li"><a href="home.html"><i class="fa fa-lg fa-home"></i></a><i class="fa-solid fa-angle-right" style="margin-left: 5px;"></i></li>
+					<li class="navbar-top-li"><a href="tongquan.html">Giới thiệu</a><i class="fa-solid fa-angle-right" style="margin-left: 5px;"></i></li>
+					<li class="navbar-top-li"><a href="tamnhin-sumang.html">Tầm nhìn, sứ mạng và chính sách ĐBCL</a></li>
+					<li class="navbar-top-li"></li>
+				</ul>
+			</div>
+			<div class="noidung-chitiet-vb">
+				<h5>@Model.DocumentDeltail.name</h5>
+				<div class="trietly">
+					<h5>@Model.DocumentDeltail.strong</h5>
+				</div>
+				<div class="div-ifame">
+					<strong style="font-size:20px; color:#e74c3c"></strong>
+					<iframe id="pdfViewer" frameborder="0" scrolling="auto" width="865px" height="1000px" src="~/Content/pdfjs/web/viewer.html?file=@Url.Content(@Model.DocumentDeltail.filepath)"></iframe>
+				</div>
+				<div class="thongtin-chitiet">
+					<h1> <i class="fa fa-list"></i>  THÔNG TIN CHI TIẾT</h1>
+					<div class="trietly" style="border-bottom-left-radius:8px ;border-bottom-right-radius:8px ;">
+						<div class="thongtinchitie">
+							<div class="thongtinchitiet-ul1">
+								<ul>
+									<li>Tên file:</li>
+									<li>Phiên bản:</li>
+									<li>Tác giả:</li>
+									<li>Website hỗ trợ:</li>
+									<li>Thuộc chủ đề:</li>
+									<li>Người gửi:</li>
+									<li>Thông tin bản quyền: </li>
+									<li>Dung lượng</li>
+									<li>Xem:</li>
+									<li>Tải về:</li>
+								</ul>
+							</div>
+							@using BaiTapLon.Helpers
+							<div class="thongtinchitiet-ul2">
+								<ul>
+									<li>@Model.DocumentDeltail.name</li>
+									<li>
+										@if (!string.IsNullOrEmpty(Model.DocumentDeltail.versions))
+										{
+											<span>@Model.DocumentDeltail.versions</span>
+										}
+										else
+										{
+											<span>N/A</span>
+										}
+									</li>
+									<li>
+										@if (!string.IsNullOrEmpty(Model.DocumentDeltail.tac_gia))
+										{
+											<span>@Model.DocumentDeltail.tac_gia</span>
+										}
+										else
+										{
+											<span>N/A</span>
+										}
+									</li>
+									<li>
+										@if (!string.IsNullOrEmpty(Model.DocumentDeltail.Website))
+										{
+											<span>@Model.DocumentDeltail.Website</span>
+										}
+										else
+										{
+											<span>N/A</span>
+										}
+									</li>
+									<li>N/a</li>
+									<li>
+										@if (!string.IsNullOrEmpty(Model.DocumentDeltail.nguoi_gui))
+										{
+											<span>@Model.DocumentDeltail.nguoi_gui</span>
+										}
+										else
+										{
+											<span>N/A</span>
+										}
+									</li>
+									<li>
+										@if (!string.IsNullOrEmpty(Model.DocumentDeltail.ban_quyen))
+										{
+											<span>@Model.DocumentDeltail.ban_quyen</span>
+										}
+										else
+										{
+											<span>N/A</span>
+										}
+									</li>
+									<li>@FileHelper.GetFileSizeFromUrl(Url.Content(Model.DocumentDeltail.filepath))</li>
+									<li>@Model.DocumentDeltail.views</li>
+									<li>@Model.DocumentDeltail.downloads</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="thongtin-chitiet-top">
+					<div class="warning">
+						<h5><i class="fa-solid fa-download"></i>Tải về</h5>
+					</div>
+					<div class="warning">
+						<p id="button"> <i class="fa-solid fa-triangle-exclamation"></i>   Báo link hỏng</p>
+					</div>
+					<script src="asset/js/contain.js"></script>
+				</div>
+				<div class="thongtin-chitiet">
+					<h1> TỪ SITE TRƯỜNG ĐẠI HỌC SAO ĐỎ:</h1>
+					<div class="trietly" style="border-bottom-left-radius:8px ;border-bottom-right-radius:8px ;">
+						<div class="thongtinchitie">
+							<div class="thongtinchitiet-2">
+								<a href="@Url.Action("DownloadDocument", "home", new { id = Model.DocumentDeltail.id })" class="thongtinchitiet-3" download="@Url.Content(Model.DocumentDeltail.filepath)">
+									<i class="fa-solid fa-link"></i>@Model.DocumentDeltail.filename
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="thongtin-chitiet">
+					<h1> ĐÁNH GIÁ</h1>
+					<div class="trietly" style="border-bottom-left-radius:8px ;border-bottom-right-radius:8px ;">
+						<div class="thongtinchitie">
+							<div class="thongtinchitiet-2">
+								<p>Bạn đánh giá thế nào về file này?</p>
+								<p>Hãy click vào hình sao để đánh giá File</p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="postIdElement" data-post-id="@Model.DocumentDeltail.id"></div>
+
+<script>
+	var id = document.getElementById('postIdElement').getAttribute('data-post-id');
+
+	var viewed = false;
+	setTimeout(function () {
+		if (!viewed) {
+			// Gửi yêu cầu đến server khi đã xem trong 15 giây
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', '/Home/IncrementViewsVanBan/' + id, true);
+			xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+			xhr.send();
+		}
+	}, 15000); // 15 giây
+</script>

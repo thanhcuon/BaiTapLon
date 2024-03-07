@@ -1,0 +1,177 @@
+﻿@using PagedList
+@model IPagedList<BaiTapLon.Context.Universities_BanMoTa>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<div class="content-wrapper">
+	<div class="content">
+		<div class="container-fluid">
+			<div class="row">
+				<h2>Index</h2>
+
+				<div class="col-md-12">
+					<a href="@Url.Action("Create","Universities_BanMoTaAdmin")" class="btn btn-success float-right m-2">Add</a>
+				</div>
+				<div class="form-group">
+					<label for="search">Tìm Kiếm:</label>
+					<input type="text" class="form-control" id="search" placeholder="Nhập từ khóa">
+				</div>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+				<script>
+					$(document).ready(function () {
+						$("#search").on("input", function () {
+							var keyword = $(this).val();
+							$.ajax({
+								url: "/admin/Universities_BanMoTaAdmin/Search",
+								type: "GET",
+								data: { keyword: keyword },
+								success: function (data) {
+									// Xóa tất cả các dòng trong bảng trừ dòng đầu tiên (header)
+									$("#myTable tbody tr").remove();
+									var counter = 1; // Đặt giá trị ban đầu cho STT
+
+									// Thêm dữ liệu tìm kiếm vào bảng và hiển thị STT
+									$.each(data, function (index, item) {
+										var row = "<tr><td>" + counter + "</td><td>" + item.Id + "</td><td>" + item.Name + "</td><td>" + "</td><td>" + item.Image_path + "</td><td>" + "</td><td>" + item.Filename + "</td><td>" + "</td><td>" + item.Category_id + "</td><td>" + "</td><td>" + item.TacGia + "</td><td>" +
+											"<a class='btn btn-default' href='/admin/CategoriesAdmin/Edit/" + item.Id + "'>Edit</a>" +
+											"<button class='btn btn-danger delete-product' data-product-id='" + item.Id + "'>Delete</button></td></tr>";;
+										$("#myTable tbody").append(row);
+										counter++; // Tăng giá trị STT cho dòng tiếp theo
+									});
+								},
+								error: function () {
+									// Xử lý khi có lỗi (ví dụ: hiển thị thông báo lỗi)
+									console.error("Đã xảy ra lỗi khi tìm kiếm.");
+								}
+							});
+						});
+					});
+				</script>
+				<table id="myTable" class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>STT</th>
+							<th>ID</th>
+							<th>
+								Name
+							</th>
+							<th>
+								Danh mục
+							</th>
+
+							<th>
+								Action
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						@{
+							int counter = Model.PageNumber * Model.PageSize - Model.PageSize + 1;
+							foreach (var item in Model)
+							{
+								<tr>
+									<td>
+										@counter
+									</td>
+									<td>
+										@Html.DisplayFor(modelItem => item.id)
+									</td>
+									<td>
+										@if (!string.IsNullOrEmpty(item.name))
+										{
+											@Html.DisplayFor(modelItem => item.name)
+										}
+									</td>
+									<td>
+										@Html.DisplayFor(modelItem => item.category_id)
+									</td>
+									<td>
+										<a href="@Url.Action("Edit", "Universities_BanMoTaAdmin", new { id = item.id })" class="btn btn-default">Edit</a>
+										<a href="#" class=" btn btn-danger delete-product" data-product-id="@item.id">Delete</a>
+									</td>
+								</tr>
+							}
+						}
+					</tbody>
+
+				</table>
+				<div class="text-center">
+					@if (Model.HasPreviousPage)
+					{
+						<a href="@Url.Action("Index", new { page = Model.PageNumber - 1 })" class="btn btn-primary"><i class="fa fa-arrow-left"></i></a>
+					}
+
+					@for (int i = Model.PageNumber - 1; i <= Model.PageNumber + 1 && i <= Model.PageCount; i++)
+					{
+						if (i > 0)
+						{
+							<a href="@Url.Action("Index", new { page = i })" class="btn btn-primary @(Model.PageNumber == i ? "active" : "")">@i</a>
+						}
+					}
+
+					@if (Model.HasNextPage)
+					{
+						<a href="@Url.Action("Index", new { page = Model.PageNumber + 1 })" class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="~/Content/vendors/select2/jquery-3.6.0.min.js"></script>
+<script src="~/Content/vendors/SweetAlert/sweetalert2@11.js"></script>
+<script>
+$(document).on('click', '.delete-product', function () {
+    var productId = $(this).data('product-id');
+    var row = $(this).closest('tr'); // Lấy thẻ tr chứa sản phẩm để xóa
+
+    var url = '@Url.Action("Delete", "Universities_BanMoTaAdmin")/' + productId;
+
+    Swal.fire({
+        title: 'Bạn có chắc?',
+        text: "Muốn xóa sản phẩm này không!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Gửi yêu cầu xóa thông qua AJAX (method: POST)
+            $.ajax({
+                type: 'POST', // Sử dụng method POST thay vì GET
+                url: url,
+                success: function (data) {
+                    if (data.code == 200) {
+                        // Xóa sản phẩm khỏi danh sách trên trang web
+                        row.fadeOut(500, function () {
+                            row.remove(); // Xóa mục trực tiếp từ DOM
+                        });
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        );
+                    } else {
+                        Swal.fire(
+                            'Error!',
+                            'Failed to delete the product.',
+                            'error'
+                        );
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                    Swal.fire(
+                        'Error!',
+                        'Failed to delete the product.',
+                        'error'
+                    );
+                }
+            });
+        }
+    });
+});
+</script>
